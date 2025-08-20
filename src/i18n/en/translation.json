@@ -1,0 +1,66 @@
+{
+  "menu-home": "Ana Sayfa",
+  "menu-about": "Hakkımızda",
+  "menu-capabilities": "Faaliyet Alanları",
+  "menu-contact": "İletişim",
+  "footer-text": "Markanızı en etkili şekilde anlatmanın yolu, profesyonel bir tanıtım filminden geçer. Reka Ajans olarak, yaratıcı senaryo kurgusu, yüksek kaliteli çekimler ve etkileyici kurgu teknikleriyle markanızın hikâyesini izleyicilere en güçlü şekilde ulaştırıyoruz.",
+  "about": {
+    "small-title": "HAKKIMIZDA",
+    "main-title": "Profesyonel Görsel İçerik Prodüksiyon Ajansı",
+    "description": "Asr Ajans, Sakarya merkezli bir prodüksiyon ajansıdır. Profesyonel drone çekimleri, tanıtım filmleri ve sosyal medya içerikleriyle işletmelere güçlü görsel kimlik kazandırır",
+    "button-text": "Hakkımızda",
+    "page": {
+      "hero-title": "Hakkımızda",
+      "hero-subtitle": "Görsel hikayelerin gücüyle markanızı zirveye taşıyoruz",
+      "who-we-are": "Biz Kimiz?",
+      "who-we-are-text": "Asr Ajans, Sakarya merkezli profesyonel bir görsel içerik prodüksiyon ajansıdır. 2019 yılından bu yana sektörde faaliyet gösteren ekibimiz, drone çekimleri, tanıtım filmleri ve sosyal medya içerikleri alanında uzmanlaşmıştır. Modern teknolojileri yaratıcılıkla harmanlayarak, markaların hikayelerini en etkili şekilde anlatmaktayız.",
+      "our-mission": "Misyonumuz",
+      "our-mission-text": "Her projeyi benzersiz bir hikaye olarak görerek, müşterilerimizin markalarına güçlü bir görsel kimlik kazandırmayı hedefliyoruz. Profesyonel ekipmanlarımız ve deneyimli kadromuzla, sektörde kalite standartlarını yükseltmeyi misyon edinmiş bulunmaktayız.",
+      "our-vision": "Vizyonumuz",
+      "our-vision-text": "Türkiye'nin önde gelen görsel içerik prodüksiyon ajanslarından biri olarak, uluslararası standartlarda hizmet sunmayı ve sektörde yenilikçi yaklaşımlarla öncü konumda olmayı hedefliyoruz. Teknolojinin sunduğu imkanları sanatsal bakış açısıyla harmanlayarak, geleceğin görsel içerik trendlerini belirleyen bir ajans olmak vizyonumuzdur.",
+      "projects": "Tamamlanan Proje",
+      "years": "Yıllık Deneyim",
+      "satisfaction": "Müşteri Memnuniyeti",
+      "services-title": "Hizmetlerimiz",
+      "service1": {
+        "title": "Drone Çekimleri",
+        "description": "4K çözünürlükte profesyonel drone çekimleri ile projelerinizi gökyüzünden en etkileyici açılarla sunuyoruz."
+      },
+      "service2": {
+        "title": "Tanıtım Filmleri",
+        "description": "Markanızın hikayesini en etkili şekilde anlatan, profesyonel tanıtım filmleri üretiyoruz."
+      },
+      "service3": {
+        "title": "Sosyal Medya İçerikleri",
+        "description": "Modern sosyal medya platformları için özel tasarlanmış, etkileyici görsel içerikler hazırlıyoruz."
+      }
+    }
+  },
+  "services": {
+    "direct-button": "Our Services",
+    "page-title": "Our Services",
+    "subtitle": "Discover our professional services that will tell your brand's visual story in the most effective way"
+  },
+  "slider": [
+    {
+      "title": "Markanı Yükselten Görüntüler",
+      "description": "Yüksek çözünürlüklü drone çekimleriyle projelerinizi en etkileyici açıdan sergileyin.",
+      "buttonText": "İzle"
+    },
+    {
+      "title": "Gökyüzünden Fark Yaratın",
+      "description": "Yüksek çözünürlüklü drone çekimleriyle projelerinizi en etkileyici açıdan sergileyin.",
+      "buttonText": "İzle"
+    },
+    {
+      "title": "Gökyüzünden Fark Yaratın",
+      "description": "Yüksek çözünürlüklü drone çekimleriyle projelerinizi en etkileyici açıdan sergileyin.",
+      "buttonText": "İzle"
+    }
+  ],
+  "rights": "Asr Ajans kurumsal websitesi tüm hakları saklıdır.",
+  "contactPage": {
+    "title": "Contact",
+    "subtitle": "Contact us for free quotes for your projects and detailed information"
+  }
+}

@@ -1,0 +1,666 @@
+// Adapazarı Page - Modern Clean Design
+.state-page {
+
+    // Hero Section - Clean and Professional
+    .hero-section {
+        background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        // Subtle overlay pattern
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+
+            .text-warning {
+                color: #ffd700 !important;
+            }
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+
+            @media (max-width: 768px) {
+                font-size: 1.1rem;
+            }
+        }
+
+        .hero-features {
+            margin-bottom: 2.5rem;
+
+            .feature-item {
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                padding: 12px 20px;
+                border-radius: 25px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.25);
+                    transform: translateY(-2px);
+                }
+
+                svg {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .hero-buttons {
+            .btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 10px;
+                border: none;
+                transition: all 0.3s ease;
+                text-decoration: none;
+
+                &.btn-warning {
+                    background: #ffd700;
+                    color: #333;
+                    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+
+                    &:hover {
+                        background: #ffed4a;
+                        transform: translateY(-3px);
+                        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+                    }
+                }
+
+                &.btn-success {
+                    background: #25d366;
+                    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+
+                    &:hover {
+                        background: #20ba5a;
+                        transform: translateY(-3px);
+                        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+                    }
+                }
+            }
+        }
+    }
+
+    // Services Section - Grid Layout
+    .services-section {
+        padding: 5rem 0;
+        background: #f8f9fa;
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .lead {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border: none;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            height: 100%;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .card-body {
+                text-align: center;
+                padding: 0;
+
+                .service-icon {
+                    margin-bottom: 1.5rem;
+                    transition: all 0.3s ease;
+                }
+
+                h5 {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: #333;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    color: #666;
+                    line-height: 1.6;
+                    font-size: 0.95rem;
+                }
+            }
+
+            &:hover .service-icon {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    // Coverage Section - Two Column Layout
+    .coverage-section {
+        padding: 5rem 0;
+        background: white;
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .lead {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+
+            &.text-primary {
+                color: #ff6b35 !important;
+            }
+        }
+
+        // Service Areas List
+        .coverage-areas {
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    padding: 8px 0;
+                    font-weight: 500;
+                    color: #555;
+                    border-bottom: 1px solid #f0f0f0;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        color: #ff6b35;
+                        padding-left: 10px;
+                    }
+
+                    svg {
+                        color: #ff6b35;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        // Reasons List
+        .reasons-list {
+            .reason-item {
+                margin-bottom: 1.5rem;
+
+                .reason-icon {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    margin-right: 1rem;
+                    flex-shrink: 0;
+                }
+
+                strong {
+                    color: #333;
+                    font-weight: 600;
+                }
+
+                div {
+                    color: #666;
+                    line-height: 1.6;
+                }
+            }
+        }
+
+        // Why Choose Us Section - Enhanced Design
+        .why-choose-us {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            border-left: 5px solid #ff6b35;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            }
+
+            h4 {
+                font-size: 1.75rem;
+                font-weight: 700;
+                color: #333;
+                margin-bottom: 2rem;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    width: 60px;
+                    height: 3px;
+                    background: linear-gradient(135deg, #ff6b35, #e55a2b);
+                    border-radius: 2px;
+                }
+
+                &.text-primary {
+                    color: #ff6b35 !important;
+                }
+            }
+
+            .reasons-list {
+                .reason-item {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 15px;
+                    margin-bottom: 1.5rem;
+                    border: 1px solid #e9ecef;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 100%;
+                        background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(229, 90, 43, 0.1));
+                        transition: width 0.4s ease;
+                        z-index: 1;
+                    }
+
+                    &:hover {
+                        transform: translateX(5px);
+                        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+                        border-color: #ff6b35;
+
+                        &::before {
+                            width: 100%;
+                        }
+
+                        .reason-icon {
+                            transform: scale(1.1);
+                            background: linear-gradient(135deg, #ff6b35, #e55a2b) !important;
+                        }
+                    }
+
+                    .reason-icon {
+                        width: 50px;
+                        height: 50px;
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        margin-right: 1.25rem;
+                        flex-shrink: 0;
+                        border: 3px solid #fff;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+                        transition: all 0.3s ease;
+                        position: relative;
+                        z-index: 2;
+
+                        &.bg-primary {
+                            background: linear-gradient(135deg, #007bff, #0056b3) !important;
+                        }
+
+                        &.bg-success {
+                            background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+                        }
+
+                        &.bg-warning {
+                            background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+                        }
+
+                        &.bg-danger {
+                            background: linear-gradient(135deg, #dc3545, #b02a37) !important;
+                        }
+                    }
+
+                    >div:last-child {
+                        position: relative;
+                        z-index: 2;
+
+                        strong {
+                            color: #333;
+                            font-weight: 600;
+                            font-size: 1.05rem;
+                            margin-bottom: 0.5rem;
+                            display: block;
+                        }
+
+                        // Regular text content
+                        & {
+                            color: #666;
+                            line-height: 1.7;
+                            font-size: 0.95rem;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 768px) {
+                margin-top: 2rem;
+                padding: 1.5rem;
+
+                h4 {
+                    font-size: 1.4rem;
+                }
+
+                .reasons-list {
+                    .reason-item {
+                        padding: 1.25rem;
+
+                        &:hover {
+                            transform: none;
+                        }
+
+                        .reason-icon {
+                            width: 45px;
+                            height: 45px;
+                            font-size: 1.1rem;
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Contact Card
+        .contact-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+            .card-header {
+                background: linear-gradient(135deg, #ff6b35, #e55a2b);
+                padding: 1.5rem;
+                border: none;
+
+                h5 {
+                    font-weight: 600;
+                    margin: 0;
+                }
+            }
+
+            .card-body {
+                padding: 2rem;
+
+                h3 {
+                    font-weight: 700;
+                    color: #ff6b35;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    color: #666;
+                    line-height: 1.6;
+                    margin-bottom: 2rem;
+                }
+
+                .btn {
+                    padding: 12px 20px;
+                    font-weight: 600;
+                    border-radius: 10px;
+                    border: none;
+                    transition: all 0.3s ease;
+
+                    &.btn-primary {
+                        background: linear-gradient(135deg, #ff6b35, #e55a2b);
+
+                        &:hover {
+                            background: linear-gradient(135deg, #e55a2b, #d44723);
+                            transform: translateY(-2px);
+                        }
+                    }
+
+                    &.btn-success {
+                        background: #25d366;
+
+                        &:hover {
+                            background: #20ba5a;
+                            transform: translateY(-2px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // SEO Content Section
+    .seo-content {
+        padding: 5rem 0;
+        background: #f8f9fa;
+
+        .seo-text {
+            max-width: 900px;
+            margin: 0 auto;
+
+            h2 {
+                font-size: 2.25rem;
+                font-weight: 700;
+                color: #333;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .content-block {
+                margin-bottom: 3rem;
+
+                h3 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: #ff6b35;
+                    margin-bottom: 1.5rem;
+                }
+
+                p {
+                    color: #555;
+                    line-height: 1.8;
+                    font-size: 1rem;
+                    margin-bottom: 1.5rem;
+                    text-align: justify;
+
+                    strong {
+                        color: #ff6b35;
+                        font-weight: 600;
+                    }
+                }
+
+                .custom-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 2rem 0;
+
+                    li {
+                        padding: 10px 0;
+                        padding-left: 30px;
+                        position: relative;
+                        color: #555;
+                        line-height: 1.6;
+                        border-bottom: 1px solid #eee;
+
+                        &::before {
+                            content: '✓';
+                            position: absolute;
+                            left: 0;
+                            top: 10px;
+                            color: #28a745;
+                            font-weight: 700;
+                            font-size: 1.1rem;
+                        }
+
+                        strong {
+                            color: #333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Emergency Footer
+    .emergency-footer {
+        background: linear-gradient(135deg, #dc3545, #c82333);
+        padding: 3rem 0;
+
+        h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .emergency-buttons {
+            .btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 50px;
+                border: none;
+                margin: 0 10px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                }
+
+                &.btn-light {
+                    background: white;
+                    color: #dc3545;
+
+                    &:hover {
+                        background: #f8f9fa;
+                    }
+                }
+
+                &.btn-success {
+                    background: #25d366;
+
+                    &:hover {
+                        background: #20ba5a;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .state-page {
+        .hero-section {
+            min-height: 60vh;
+            padding: 2rem 0;
+
+            .hero-features {
+                .feature-item {
+                    margin-bottom: 10px;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .hero-buttons {
+                .btn {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .services-section,
+        .coverage-section,
+        .seo-content {
+            padding: 3rem 0;
+        }
+
+        .emergency-footer {
+            padding: 2rem 0;
+
+            h4 {
+                font-size: 1.5rem;
+            }
+
+            .emergency-buttons {
+                .btn {
+                    width: 100%;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .state-page {
+        .hero-section {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+        }
+
+        .coverage-section {
+            .coverage-areas {
+                .row .col-md-6:first-child {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
