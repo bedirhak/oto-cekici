@@ -1,7 +1,6 @@
 @use "colors" as *;
 @import "normalization";
 @import "navbar";
-// @import "container";
 @import "modernFooter";
 @import "whatsapp";
 @import "footer";
@@ -9,6 +8,3 @@
 @import "homepage";
 @import "aboutPage";
 @import "adapazari";
-
-// Harici bir URL'den CSS importu için doğrudan kullanılabilir:
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");

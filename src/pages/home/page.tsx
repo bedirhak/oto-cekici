@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
 
             {/* Services Section */}
             <section className="services-section">
-                <div className="container">
+                <main className="container">
                     <h2 className="section-title">Oto Çekici Hizmetlerimiz</h2>
                     <div className="services-grid">
                         <div className="service-card">
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </main>
             </section>
 
             {/* Emergency Contact */}
@@ -130,7 +130,7 @@ const HomePage: React.FC = () => {
                     </p>
                     <div className="areas-grid">
                         <div className="area-group">
-                            <h4>Merkez İlçeler</h4>
+                            <h3>Merkez İlçeler</h3>
                             <ul>
                                 <li>✅ Serdivan - Adapazarı</li>
                                 <li>✅ Arifiye - Erenler</li>
@@ -138,7 +138,7 @@ const HomePage: React.FC = () => {
                             </ul>
                         </div>
                         <div className="area-group">
-                            <h4>Tüm İlçelerimiz</h4>
+                            <h3>Tüm İlçelerimiz</h3>
                             <ul>
                                 <li>✅ Geyve - Hendek - Karasu</li>
                                 <li>✅ Karapürçek - Kaynarca</li>
@@ -147,7 +147,7 @@ const HomePage: React.FC = () => {
                             </ul>
                         </div>
                         <div className="area-group">
-                            <h4>Ana Yollar</h4>
+                            <h3>Ana Yollar</h3>
                             <ul>
                                 <li>🛣️ TEM Otoyolu</li>
                                 <li>🛣️ D-100 Karayolu</li>
