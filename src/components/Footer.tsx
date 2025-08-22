@@ -74,10 +74,10 @@ const Footer = () => {
                   <FaAddressBook className="contact-icon" />
                   <div className="contact-details">
                     <span className="contact-label">Hizmet Merkezi</span>
-                    <span className="contact-value">
+                    <address className="contact-value">
                       Sakarya - Adapazarı<br />
                       TEM ve D-100 Otoyolu Üzeri
-                    </span>
+                    </address>
                   </div>
                 </div>
                 <div className="contact-item emergency-note">

@@ -27,9 +27,7 @@ const HomePage: React.FC = () => {
                             <i className="phone-icon"></i>
                             HEMEN ARA: {phoneNumber}
                         </button>
-                        <button className="cta-button secondary">
-                            ÜCRETSİZ FİYAT TEKLIFI AL
-                        </button>
+
                     </div>
                 </div>
             </section>

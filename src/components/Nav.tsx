@@ -84,7 +84,7 @@ const ContraNavBar = () => {
 
 
                         <Nav className="me-auto">
-                            <Nav.Link className="cg-nav-link" href="/">
+                            <Nav.Link className="cg-nav-link nav-home" href="/">
                                 Ana Sayfa
                             </Nav.Link>
 
@@ -139,7 +139,7 @@ const ContraNavBar = () => {
                                 </div>
                             </div>
 
-                            <Nav.Link className="cg-nav-link" href="/about">
+                            <Nav.Link className="cg-nav-link nav-about" href="/about">
                                 Hakkımızda
                             </Nav.Link>
                         </Nav>

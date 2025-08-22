@@ -1,0 +1,48 @@
+User-agent: *
+Allow: /
+
+# Sitemap dosyanızı belirtin
+Sitemap: https://sakaryaotocekici.com/sitemap.xml
+
+# Ana sayfalar ve önemli bölümler
+Allow: /about
+Allow: /services
+Allow: /references
+
+# İlçe sayfaları
+Allow: /adapazari
+Allow: /serdivan
+Allow: /arifiye
+Allow: /erenler
+Allow: /hendek
+Allow: /geyve
+Allow: /sapanca
+Allow: /karasu
+Allow: /pamukova
+Allow: /karapurcek
+Allow: /kaynarca
+Allow: /kocaali
+Allow: /sogutlu
+Allow: /tarakli
+Allow: /ferizli
+
+# Referans detayları
+Allow: /reference-detail/
+
+# Statik dosyalar
+Allow: /assets/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
+
+# Tarama hızı (isteğe bağlı)
+Crawl-delay: 1
+
+# Host belirtme (isteğe bağlı, çoğu bot için gerekmez)
+Host: https://sakaryaotocekici.com
