@@ -1,0 +1,688 @@
+// Variables
+$primary-color: #ff6b35;
+$secondary-color: #2c3e50;
+$accent-color: #27ae60;
+$text-dark: #2c3e50;
+$text-light: #7f8c8d;
+$background-light: #f8f9fa;
+$white: #ffffff;
+$danger-color: #e74c3c;
+$warning-color: #f39c12;
+
+// Mixins
+@mixin button-style($bg-color, $text-color: $white) {
+    background: $bg-color;
+    color: $text-color;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba($bg-color, 0.3);
+        color: $text-color;
+        text-decoration: none;
+    }
+}
+
+@mixin card-style {
+    background: $white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+}
+
+// Main page styling
+.en-yakin-page {
+    overflow-x: hidden;
+
+    // Hero Section
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: $white;
+        padding: 80px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 0,100 0,0 1000,50"/></svg>');
+            background-size: 100% 100%;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.6;
+
+            @media (max-width: 768px) {
+                font-size: 1.1rem;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+
+            .primary-btn {
+                @include button-style($primary-color);
+                font-size: 18px;
+                padding: 16px 32px;
+            }
+
+            .secondary-btn {
+                @include button-style($accent-color);
+                font-size: 18px;
+                padding: 16px 32px;
+            }
+        }
+
+        .proximity-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+
+            .proximity-badge {
+                background: rgba($white, 0.2);
+                backdrop-filter: blur(10px);
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 500;
+                border: 1px solid rgba($white, 0.3);
+            }
+        }
+    }
+
+    // Nearest Locations Section
+    .nearest-locations-section {
+        padding: 80px 0;
+        background: $background-light;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .location-content {
+            h3 {
+                color: $primary-color;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.4rem;
+                margin: 32px 0 16px 0;
+                font-weight: 600;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+        }
+
+        .proximity-map {
+            @include card-style;
+
+            h3 {
+                color: $text-dark;
+                font-size: 1.6rem;
+                margin-bottom: 24px;
+                font-weight: 600;
+            }
+
+            .distance-list {
+                .distance-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    padding: 16px 0;
+                    border-bottom: 1px solid #eee;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    .location-icon {
+                        color: $primary-color;
+                        font-size: 1.2rem;
+                        min-width: 20px;
+                    }
+
+                    .distance-info {
+                        flex: 1;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        h5 {
+                            margin: 0;
+                            color: $text-dark;
+                            font-weight: 600;
+                        }
+
+                        span {
+                            background: $accent-color;
+                            color: $white;
+                            padding: 4px 12px;
+                            border-radius: 12px;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Surrounding Areas Section
+    .surrounding-areas-section {
+        padding: 80px 0;
+        background: $white;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .transfer-content {
+            h3 {
+                color: $primary-color;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.4rem;
+                margin: 32px 0 16px 0;
+                font-weight: 600;
+            }
+
+            h5 {
+                color: $text-dark;
+                font-size: 1.2rem;
+                margin: 24px 0 12px 0;
+                font-weight: 600;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .route-list {
+                list-style: none;
+                padding: 0;
+                margin: 24px 0;
+
+                li {
+                    background: $background-light;
+                    padding: 12px 16px;
+                    margin-bottom: 8px;
+                    border-radius: 8px;
+                    border-left: 4px solid $primary-color;
+
+                    strong {
+                        color: $text-dark;
+                    }
+                }
+            }
+        }
+
+        .service-features {
+            h3 {
+                color: $text-dark;
+                font-size: 1.8rem;
+                margin-bottom: 32px;
+                font-weight: 600;
+            }
+
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 24px;
+                margin-bottom: 40px;
+
+                .feature-item {
+                    @include card-style;
+                    text-align: center;
+
+                    .feature-icon {
+                        color: $primary-color;
+                        font-size: 2.5rem;
+                        margin-bottom: 16px;
+                    }
+
+                    h4 {
+                        color: $text-dark;
+                        font-size: 1.1rem;
+                        margin-bottom: 12px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        color: $text-light;
+                        font-size: 14px;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .emergency-box {
+                @include card-style;
+                background: linear-gradient(135deg, $danger-color, #c0392b);
+                color: $white;
+                text-align: center;
+
+                h4 {
+                    color: $white;
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    color: rgba($white, 0.9);
+                    margin-bottom: 20px;
+                }
+
+                .primary-btn {
+                    @include button-style($white, $danger-color);
+                }
+            }
+        }
+    }
+
+    // Highway Services Section
+    .highway-services-section {
+        padding: 80px 0;
+        background: $background-light;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .highway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+
+            .highway-item {
+                @include card-style;
+
+                h3 {
+                    color: $text-dark;
+                    font-size: 1.4rem;
+                    margin-bottom: 16px;
+                    font-weight: 600;
+                }
+
+                p {
+                    color: $text-light;
+                    line-height: 1.7;
+                    margin-bottom: 20px;
+                }
+
+                .highway-features {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    span {
+                        background: rgba($accent-color, 0.1);
+                        color: $accent-color;
+                        padding: 6px 12px;
+                        border-radius: 6px;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    // SEO Content Section
+    .seo-content-section {
+        padding: 80px 0;
+        background: $white;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .seo-text {
+            max-width: 1000px;
+            margin: 0 auto;
+
+            h3 {
+                color: $primary-color;
+                font-size: 2rem;
+                margin: 40px 0 20px 0;
+                font-weight: 600;
+                line-height: 1.3;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.6rem;
+                margin: 32px 0 16px 0;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+
+            h5 {
+                color: $text-dark;
+                font-size: 1.3rem;
+                margin: 28px 0 14px 0;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+
+            h6 {
+                color: $text-dark;
+                font-size: 1.1rem;
+                margin: 24px 0 12px 0;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    // CTA Section
+    .cta-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, $secondary-color 0%, #34495e 100%);
+        color: $white;
+
+        .cta-box {
+            @include card-style;
+            background: rgba($white, 0.95);
+            color: $text-dark;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+
+            h2 {
+                color: $text-dark;
+                font-size: 2.2rem;
+                margin-bottom: 16px;
+                font-weight: 700;
+            }
+
+            .cta-text {
+                color: $text-light;
+                font-size: 1.2rem;
+                margin-bottom: 32px;
+                line-height: 1.6;
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 16px;
+                justify-content: center;
+                margin-bottom: 40px;
+                flex-wrap: wrap;
+
+                .primary-btn {
+                    @include button-style($primary-color);
+                    font-size: 18px;
+                    padding: 16px 32px;
+                }
+
+                .secondary-btn {
+                    @include button-style($accent-color);
+                    font-size: 18px;
+                    padding: 16px 32px;
+                }
+            }
+
+            .quick-stats {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                flex-wrap: wrap;
+
+                .stat-item {
+                    text-align: center;
+
+                    .stat-number {
+                        display: block;
+                        font-size: 2rem;
+                        font-weight: 700;
+                        color: $primary-color;
+                        margin-bottom: 4px;
+                    }
+
+                    .stat-label {
+                        font-size: 14px;
+                        color: $text-light;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive Design
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 60px 0;
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+
+                .primary-btn,
+                .secondary-btn {
+                    justify-content: center;
+                }
+            }
+
+            .proximity-badges {
+                justify-content: center;
+            }
+        }
+
+        .nearest-locations-section,
+        .surrounding-areas-section,
+        .highway-services-section,
+        .seo-content-section,
+        .cta-section {
+            padding: 60px 0;
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .highway-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .service-features .feature-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-box {
+            margin: 0 16px;
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+
+                .primary-btn,
+                .secondary-btn {
+                    justify-content: center;
+                }
+            }
+
+            .quick-stats {
+                gap: 20px;
+
+                .stat-item .stat-number {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .proximity-map {
+            margin-top: 32px;
+        }
+
+        .distance-list .distance-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+
+            .distance-info {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        .highway-services-section .highway-grid {
+            gap: 20px;
+        }
+
+        .seo-text {
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                font-size: 1.3rem;
+            }
+
+            h5 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+// Animation classes
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,834 @@
+// Variables
+$primary-color: #ff6b35;
+$secondary-color: #2c3e50;
+$accent-color: #27ae60;
+$text-dark: #2c3e50;
+$text-light: #7f8c8d;
+$background-light: #f8f9fa;
+$white: #ffffff;
+$danger-color: #e74c3c;
+$warning-color: #f39c12;
+$success-color: #27ae60;
+
+// Mixins
+@mixin button-style($bg-color, $text-color: $white) {
+    background: $bg-color;
+    color: $text-color;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba($bg-color, 0.3);
+        color: $text-color;
+        text-decoration: none;
+    }
+}
+
+@mixin card-style {
+    background: $white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+}
+
+// Main page styling
+.yol-yardim-page {
+    overflow-x: hidden;
+
+    // Hero Section
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: $white;
+        padding: 80px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 0,100 0,0 1000,50"/></svg>');
+            background-size: 100% 100%;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.6;
+
+            @media (max-width: 768px) {
+                font-size: 1.1rem;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+
+            .primary-btn {
+                @include button-style($danger-color);
+                font-size: 18px;
+                padding: 16px 32px;
+
+                &:hover {
+                    background: darken($danger-color, 10%);
+                    box-shadow: 0 6px 20px rgba($danger-color, 0.4);
+                }
+            }
+
+            .secondary-btn {
+                @include button-style($success-color);
+                font-size: 18px;
+                padding: 16px 32px;
+
+                &:hover {
+                    background: darken($success-color, 10%);
+                    box-shadow: 0 6px 20px rgba($success-color, 0.4);
+                }
+            }
+        }
+    }
+
+    // Services Section
+    .services-section {
+        padding: 80px 0;
+        background: $background-light;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .services-row {
+            .service-card {
+                @include card-style;
+                text-align: center;
+                height: 100%;
+                margin-bottom: 30px;
+
+                .service-icon {
+                    color: $primary-color;
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                    display: block;
+                }
+
+                h3 {
+                    color: $text-dark;
+                    font-size: 1.4rem;
+                    margin-bottom: 16px;
+                    font-weight: 600;
+                }
+
+                p {
+                    color: $text-light;
+                    line-height: 1.7;
+                    margin: 0;
+                    font-size: 15px;
+                }
+
+                &:hover {
+                    .service-icon {
+                        color: $danger-color;
+                        transform: scale(1.1);
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+        }
+    }
+
+    // Why Choose Section
+    .why-choose-section {
+        padding: 80px 0;
+        background: $white;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .reasons-row {
+            .reason-card {
+                @include card-style;
+                text-align: center;
+                height: 100%;
+                margin-bottom: 30px;
+
+                .reason-icon {
+                    color: $success-color;
+                    font-size: 2.5rem;
+                    margin-bottom: 16px;
+                }
+
+                h3 {
+                    color: $text-dark;
+                    font-size: 1.3rem;
+                    margin-bottom: 12px;
+                    font-weight: 600;
+                }
+
+                p {
+                    color: $text-light;
+                    line-height: 1.7;
+                    margin: 0;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    // District Service Section
+    .district-service-section {
+        padding: 80px 0;
+        background: $background-light;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .district-content {
+            h3 {
+                color: $primary-color;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.4rem;
+                margin: 32px 0 16px 0;
+                font-weight: 600;
+            }
+
+            h5 {
+                color: $text-dark;
+                font-size: 1.2rem;
+                margin: 24px 0 12px 0;
+                font-weight: 600;
+            }
+
+            h6 {
+                color: $danger-color;
+                font-size: 1.1rem;
+                margin: 20px 0 10px 0;
+                font-weight: 600;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // When to Call Section
+    .when-to-call-section {
+        padding: 80px 0;
+        background: $white;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .situation-card {
+            @include card-style;
+            text-align: center;
+            height: 100%;
+            margin-bottom: 30px;
+
+            .situation-icon {
+                color: $warning-color;
+                font-size: 2.5rem;
+                margin-bottom: 16px;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+                font-weight: 600;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.7;
+                margin: 0;
+                font-size: 14px;
+            }
+        }
+
+        .info-box {
+            @include card-style;
+            background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($success-color, 0.1));
+            margin-top: 40px;
+            border-left: 4px solid $primary-color;
+
+            h6 {
+                color: $text-dark;
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+                font-weight: 600;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.7;
+                margin: 0;
+            }
+        }
+    }
+
+    // Battery Service Section
+    .battery-service-section {
+        padding: 80px 0;
+        background: $background-light;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .battery-content {
+            h3 {
+                color: $primary-color;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.4rem;
+                margin: 32px 0 16px 0;
+                font-weight: 600;
+            }
+
+            h6 {
+                color: $text-dark;
+                font-size: 1.1rem;
+                margin: 24px 0 12px 0;
+                font-weight: 600;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .feature-list {
+                list-style: none;
+                padding: 0;
+                margin: 24px 0;
+
+                li {
+                    background: $white;
+                    padding: 12px 16px;
+                    margin-bottom: 8px;
+                    border-radius: 8px;
+                    border-left: 4px solid $success-color;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+                    strong {
+                        color: $text-dark;
+                    }
+                }
+            }
+        }
+
+        .battery-image-container {
+            .battery-service-cta {
+                @include card-style;
+                background: linear-gradient(135deg, $danger-color, darken($danger-color, 10%));
+                color: $white;
+                text-align: center;
+
+                h4 {
+                    color: $white;
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    color: rgba($white, 0.9);
+                    margin-bottom: 20px;
+                }
+
+                .primary-btn {
+                    @include button-style($white, $danger-color);
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    // D-100 Highway Section
+    .d100-highway-section {
+        padding: 80px 0;
+        background: $white;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: $text-light;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .d100-content {
+            h3 {
+                color: $primary-color;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.4rem;
+                margin: 32px 0 16px 0;
+                font-weight: 600;
+            }
+
+            h5 {
+                color: $text-dark;
+                font-size: 1.2rem;
+                margin: 24px 0 12px 0;
+                font-weight: 600;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .feature-list {
+                list-style: none;
+                padding: 0;
+                margin: 24px 0;
+
+                li {
+                    background: $background-light;
+                    padding: 12px 16px;
+                    margin-bottom: 8px;
+                    border-radius: 8px;
+                    border-left: 4px solid $primary-color;
+
+                    strong {
+                        color: $text-dark;
+                    }
+                }
+            }
+        }
+
+        .d100-info {
+            h4 {
+                color: $text-dark;
+                font-size: 1.4rem;
+                margin-bottom: 24px;
+                font-weight: 600;
+            }
+
+            .situation-list {
+                .situation-item {
+                    background: $background-light;
+                    padding: 16px;
+                    margin-bottom: 12px;
+                    border-radius: 8px;
+                    border-left: 4px solid $warning-color;
+
+                    h6 {
+                        color: $text-dark;
+                        font-size: 1rem;
+                        margin-bottom: 8px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        color: $text-light;
+                        font-size: 14px;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .emergency-contact {
+                @include card-style;
+                background: linear-gradient(135deg, $danger-color, darken($danger-color, 10%));
+                color: $white;
+                text-align: center;
+                margin-top: 30px;
+
+                h5 {
+                    color: $white;
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    color: rgba($white, 0.9);
+                    margin-bottom: 20px;
+                }
+
+                .primary-btn {
+                    @include button-style($white, $danger-color);
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    // SEO Content Section
+    .seo-content-section {
+        padding: 80px 0;
+        background: $background-light;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .seo-text {
+            max-width: 1000px;
+            margin: 0 auto;
+
+            h3 {
+                color: $primary-color;
+                font-size: 2rem;
+                margin: 40px 0 20px 0;
+                font-weight: 600;
+                line-height: 1.3;
+            }
+
+            h4 {
+                color: $text-dark;
+                font-size: 1.6rem;
+                margin: 32px 0 16px 0;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+
+            h5 {
+                color: $text-dark;
+                font-size: 1.3rem;
+                margin: 28px 0 14px 0;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+
+            h6 {
+                color: $text-dark;
+                font-size: 1.1rem;
+                margin: 24px 0 12px 0;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    // CTA Section
+    .cta-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, $secondary-color 0%, #34495e 100%);
+        color: $white;
+
+        .cta-box {
+            @include card-style;
+            background: rgba($white, 0.95);
+            color: $text-dark;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+
+            h2 {
+                color: $text-dark;
+                font-size: 2.2rem;
+                margin-bottom: 16px;
+                font-weight: 700;
+            }
+
+            .cta-text {
+                color: $text-light;
+                font-size: 1.2rem;
+                margin-bottom: 32px;
+                line-height: 1.6;
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 16px;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                .primary-btn {
+                    @include button-style($danger-color);
+                    font-size: 18px;
+                    padding: 16px 32px;
+                }
+
+                .secondary-btn {
+                    @include button-style($success-color);
+                    font-size: 18px;
+                    padding: 16px 32px;
+                }
+            }
+        }
+    }
+
+    // Responsive Design
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 60px 0;
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+
+                .primary-btn,
+                .secondary-btn {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .services-section,
+        .why-choose-section,
+        .district-service-section,
+        .when-to-call-section,
+        .battery-service-section,
+        .d100-highway-section,
+        .seo-content-section,
+        .cta-section {
+            padding: 60px 0;
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .cta-box {
+            margin: 0 16px;
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+
+                .primary-btn,
+                .secondary-btn {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .seo-text {
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                font-size: 1.3rem;
+            }
+
+            h5 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+
+        .services-row,
+        .reasons-row {
+
+            .service-card,
+            .reason-card,
+            .situation-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        .battery-service-section {
+            .battery-image-container {
+                margin-top: 30px;
+            }
+        }
+
+        .d100-info {
+            margin-top: 40px;
+        }
+    }
+}
+
+// Animation classes
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// Special hover effects
+.service-card,
+.reason-card,
+.situation-card {
+    &:hover {
+
+        .service-icon,
+        .reason-icon,
+        .situation-icon {
+            animation: pulse 1s infinite;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

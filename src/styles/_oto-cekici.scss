@@ -1,0 +1,377 @@
+@use "colors" as *;
+
+.oto-cekici-page {
+    .hero-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+
+        h1 {
+            color: $main-theme;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #444;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 3rem;
+    }
+
+    section {
+        padding: 70px 0;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: $main-theme;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: $main-theme;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        h5,
+        h6 {
+            color: #444;
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+    }
+
+    .why-choose-section {
+        background: #f8f9fa;
+
+        .reasons-row {
+            margin-top: 2rem;
+        }
+
+        .reason-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            height: 100%;
+            transition: all 0.3s ease;
+            border-left: 4px solid $main-theme;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .reason-icon {
+                font-size: 2.5rem;
+                color: $main-theme;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                color: #666;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .district-service-section {
+        .district-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            h3 {
+                color: $main-theme;
+                border-bottom: 2px solid #f0f0f0;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            h4,
+            h5,
+            h6 {
+                margin-top: 20px;
+            }
+
+            p {
+                color: #555;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .when-to-call-section {
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 107, 53, 0.1) 100%);
+
+        .situation-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            height: 100%;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .situation-icon {
+                font-size: 2rem;
+                color: $main-theme;
+                margin-bottom: 1rem;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                margin-top: 0;
+            }
+
+            p {
+                color: #666;
+                margin-bottom: 0;
+            }
+        }
+
+        .info-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid $main-theme;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            h6 {
+                color: $main-theme;
+                margin-top: 0;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .battery-service-section {
+        .battery-content {
+            h3 {
+                color: $main-theme;
+                margin-bottom: 15px;
+            }
+
+            .feature-list {
+                padding-left: 20px;
+                margin-bottom: 25px;
+
+                li {
+                    margin-bottom: 10px;
+                    color: #555;
+                }
+            }
+        }
+
+        .battery-image-container {
+            position: relative;
+
+            img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .battery-service-cta {
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+                h4 {
+                    color: $main-theme;
+                    margin-top: 0;
+                }
+
+                p {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .seo-content-section {
+        background: #f8f9fa;
+
+        .seo-text {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            h5,
+            h6 {
+                color: $main-theme;
+            }
+
+            p {
+                color: #555;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .cta-section {
+        .cta-box {
+            background: linear-gradient(135deg, $main-theme 0%, #e55a2b 100%);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba($main-theme, 0.3);
+
+            h2 {
+                color: white;
+                margin-bottom: 15px;
+            }
+
+            .cta-text {
+                color: white;
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+            }
+
+            .cta-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .primary-btn {
+                background: white;
+                color: $main-theme;
+                border: none;
+
+                &:hover {
+                    background: #f8f9fa;
+                }
+            }
+
+            .secondary-btn {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                border: 2px solid white;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    // Button Styles
+    .primary-btn,
+    .secondary-btn {
+        padding: 12px 24px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        svg {
+            font-size: 1.2rem;
+        }
+    }
+
+    .primary-btn {
+        background: linear-gradient(135deg, $main-theme 0%, #e55a2b 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 5px 15px rgba($main-theme, 0.3);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba($main-theme, 0.4);
+        }
+    }
+
+    .secondary-btn {
+        background: white;
+        color: $main-theme;
+        border: 2px solid $main-theme;
+
+        &:hover {
+            background: rgba($main-theme, 0.05);
+            transform: translateY(-3px);
+        }
+    }
+
+    // Responsive
+    @media (max-width: 991px) {
+        .hero-section {
+            padding: 60px 0;
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        section {
+            padding: 50px 0;
+        }
+
+        .hero-section {
+            padding: 40px 0;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .battery-service-section .battery-image-container img {
+            margin-top: 30px;
+        }
+    }
+}
+
+// import in App.scss

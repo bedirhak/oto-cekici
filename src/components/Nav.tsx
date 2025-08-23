@@ -4,10 +4,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Logo from "../assets/images/logo.png";
 import { FaPhone, FaWhatsapp, FaChevronDown } from "react-icons/fa";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const ContraNavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isDistrictsDropdownOpen, setIsDistrictsDropdownOpen] = useState(false);
+    const [isTowTruckDropdownOpen, setIsTowTruckDropdownOpen] = useState(false);
     const phoneNumber = "0539 585 44 22";
 
     useEffect(() => {
@@ -16,8 +18,21 @@ const ContraNavBar = () => {
             setIsScrolled(scrollTop > 50);
         };
 
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Element;
+            if (!target.closest('.nav-dropdown-wrapper')) {
+                setIsDistrictsDropdownOpen(false);
+                setIsTowTruckDropdownOpen(false);
+            }
+        };
+
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            document.removeEventListener('click', handleClickOutside);
+        };
     }, []);
 
     const handleCallClick = () => {
@@ -30,17 +45,23 @@ const ContraNavBar = () => {
         window.open(url, '_blank');
     };
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
+    const toggleDistrictsDropdown = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDistrictsDropdownOpen(!isDistrictsDropdownOpen);
+        setIsTowTruckDropdownOpen(false); // Close other dropdown
     };
 
-    const handleDropdownClick = (e: React.MouseEvent) => {
+    const toggleTowTruckDropdown = (e: React.MouseEvent) => {
         e.preventDefault();
-        toggleDropdown();
+        e.stopPropagation();
+        setIsTowTruckDropdownOpen(!isTowTruckDropdownOpen);
+        setIsDistrictsDropdownOpen(false); // Close other dropdown
     };
 
     const handleItemClick = () => {
-        setIsDropdownOpen(false);
+        setIsDistrictsDropdownOpen(false);
+        setIsTowTruckDropdownOpen(false);
     };
 
     return (
@@ -82,24 +103,28 @@ const ContraNavBar = () => {
                             </button>
                         </div>
 
-
                         <Nav className="me-auto">
                             <Nav.Link className="cg-nav-link nav-home" href="/">
                                 Ana Sayfa
                             </Nav.Link>
 
-                            {/* İlçeler Hover Dropdown Menu */}
+                            {/* İlçeler Dropdown Menu */}
                             <div className="nav-dropdown-wrapper">
                                 <Nav.Link
                                     className="cg-nav-link dropdown-trigger"
                                     href="#"
                                     role="button"
-                                    onClick={handleDropdownClick}
-                                    data-bs-toggle="dropdown"
+                                    onClick={toggleDistrictsDropdown}
+                                    onMouseEnter={() => window.innerWidth >= 992 && setIsDistrictsDropdownOpen(true)}
+                                    onMouseLeave={() => window.innerWidth >= 992 && setIsDistrictsDropdownOpen(false)}
                                 >
-                                    İlçelerimiz <FaChevronDown className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`} />
+                                    İlçelerimiz <FaChevronDown className={`dropdown-arrow ${isDistrictsDropdownOpen ? 'open' : ''}`} />
                                 </Nav.Link>
-                                <div className={`custom-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+                                <div
+                                    className={`custom-dropdown-menu districts-dropdown ${isDistrictsDropdownOpen ? 'show' : ''}`}
+                                    onMouseEnter={() => window.innerWidth >= 992 && setIsDistrictsDropdownOpen(true)}
+                                    onMouseLeave={() => window.innerWidth >= 992 && setIsDistrictsDropdownOpen(false)}
+                                >
                                     <div className="dropdown-section">
                                         <h6 className="dropdown-header">🏙️ Merkez İlçeler</h6>
                                         <a href="/adapazari" className="dropdown-item" onClick={handleItemClick}>Adapazarı Oto Çekici</a>
@@ -139,6 +164,32 @@ const ContraNavBar = () => {
                                 </div>
                             </div>
 
+                            {/* Oto Çekici Dropdown Menu */}
+                            <div className="nav-dropdown-wrapper">
+                                <Nav.Link
+                                    className="cg-nav-link dropdown-trigger"
+                                    href="#"
+                                    role="button"
+                                    onClick={toggleTowTruckDropdown}
+                                    onMouseEnter={() => window.innerWidth >= 992 && setIsTowTruckDropdownOpen(true)}
+                                    onMouseLeave={() => window.innerWidth >= 992 && setIsTowTruckDropdownOpen(false)}
+                                >
+                                    Oto Çekici <FaChevronDown className={`dropdown-arrow ${isTowTruckDropdownOpen ? 'open' : ''}`} />
+                                </Nav.Link>
+                                <div
+                                    className={`custom-dropdown-menu towtruck-dropdown ${isTowTruckDropdownOpen ? 'show' : ''}`}
+                                    onMouseEnter={() => window.innerWidth >= 992 && setIsTowTruckDropdownOpen(true)}
+                                    onMouseLeave={() => window.innerWidth >= 992 && setIsTowTruckDropdownOpen(false)}
+                                >
+                                    <div className="dropdown-section">
+                                        <a href="/en-yakin" className="dropdown-item" onClick={handleItemClick}>En Yakın Oto Çekici</a>
+                                        <a href="/oto-cekici" className="dropdown-item" onClick={handleItemClick}>Oto Çekici</a>
+                                        <a href="/yol-yardim" className="dropdown-item" onClick={handleItemClick}>Yol Yardım</a>
+                                        {/* <a href="/aku-takviye" className="dropdown-item" onClick={handleItemClick}>Akü Takviye</a> */}
+                                    </div>
+                                </div>
+                            </div>
+
                             <Nav.Link className="cg-nav-link nav-about" href="/about">
                                 Hakkımızda
                             </Nav.Link>
@@ -146,7 +197,6 @@ const ContraNavBar = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
         </>
 
     );
