@@ -4,7 +4,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Logo from "../assets/images/logo.png";
 import { FaPhone, FaWhatsapp, FaChevronDown } from "react-icons/fa";
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const ContraNavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -77,7 +76,7 @@ const ContraNavBar = () => {
 
                     {/* Mobile Call Button */}
                     <div className="mobile-call-btn d-lg-none">
-                        <button className="emergency-call-btn" onClick={handleCallClick}>
+                        <button id="navCallButtonMobile" className="emergency-call-btn" onClick={handleCallClick}>
                             <FaPhone />
                             <span>ARA</span>
                         </button>
@@ -93,11 +92,11 @@ const ContraNavBar = () => {
 
                         {/* Desktop Contact Buttons */}
                         <div className="navbar-contact-buttons d-none d-lg-flex">
-                            <button className="navbar-whatsapp-btn" onClick={handleWhatsAppClick}>
+                            <button id="navWhatsappButton" className="navbar-whatsapp-btn" onClick={handleWhatsAppClick}>
                                 <FaWhatsapp />
                                 <span>WhatsApp</span>
                             </button>
-                            <button className="navbar-call-btn" onClick={handleCallClick}>
+                            <button id="navCallButton" className="navbar-call-btn" onClick={handleCallClick}>
                                 <FaPhone />
                                 <span>{phoneNumber}</span>
                             </button>

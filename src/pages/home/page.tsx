@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
                         lastik patlağı veya herhangi bir sorun yaşadığınızda hemen yanınızdayız.
                     </p>
                     <div className="hero-buttons">
-                        <button className="cta-button primary" onClick={handleCallClick}>
+                        <button id="callButtonId" className="cta-button primary" onClick={handleCallClick}>
                             <i className="phone-icon"></i>
                             HEMEN ARA: {phoneNumber}
                         </button>
